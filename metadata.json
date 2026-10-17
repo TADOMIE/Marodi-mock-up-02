@@ -1,0 +1,6 @@
+{
+  "name": "Marodi TV – Séries sénégalaises en streaming",
+  "description": "Découvrez toutes les séries sénégalaises produites par Marodi TV. De Baabel à Maîtresse d'un homme marié. Inspiré par vos émotions. 🇸🇳",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,3 @@
+# Private demonstration mock-up. Do not index.
+User-agent: *
+Disallow: /

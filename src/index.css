@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0A0A0A;
+  --color-surface: #121212;
+  --color-line: #2A2A2A;
+  --color-bone: #F2EFE8;
+  --color-mist: #B5B1A7;
+  --color-yellow: #FFC400;
+
+  --font-heading: 'Archivo', sans-serif;
+  --font-body: 'Source Sans 3', sans-serif;
+}
+
+/* Base typography and sizing */
+html {
+  font-size: 16px;
+  background-color: #0A0A0A;
+  color: #F2EFE8;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Archivo', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  font-weight: 700;
+}
+
+/* Hairline utility */
+.hairline-b {
+  border-bottom: 1px solid #2A2A2A;
+}
+.hairline-t {
+  border-top: 1px solid #2A2A2A;
+}
+.hairline-r {
+  border-right: 1px solid #2A2A2A;
+}
+.hairline-l {
+  border-left: 1px solid #2A2A2A;
+}
+
+/* Rectangular button wipe transition */
+.btn-yellow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: #FFC400;
+  color: #0A0A0A;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 1rem 2rem;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 120ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-yellow:active {
+  transform: scale(0.98) translateY(2px);
+}
+
+/* Focus styles meeting WCAG AAA */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #FFC400;
+  outline-offset: 2px;
+}
+
+/* Infinite single row marquee */
+@keyframes marquee-single {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-single {
+  display: flex;
+  width: max-content;
+  animation: marquee-single 45s linear infinite;
+}
+
+.animate-marquee-single:hover {
+  animation-play-state: paused;
+}
+
+/* Masked line reveal animation */
+.reveal-mask {
+  overflow: hidden;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
